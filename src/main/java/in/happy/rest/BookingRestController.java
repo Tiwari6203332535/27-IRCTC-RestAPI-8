@@ -22,7 +22,7 @@ public class BookingRestController {
 	
 	@PostMapping(value = "/ticket", consumes = { "application/json" }, produces = { "application/json" })
 	public ResponseEntity<Ticket> ticketBooking(@RequestBody Passenger passenger) {
-		System.out.println(passenger);
+	
 		Ticket ticket = service.bookTicket(passenger);
 		return new ResponseEntity<>(ticket, HttpStatus.CREATED);
 	}
